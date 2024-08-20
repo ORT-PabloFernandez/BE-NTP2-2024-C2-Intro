@@ -6,9 +6,10 @@
     <link href="css/styles.css" rel="stylesheet" />
     <title>NTP2</title>
     <script>
-      function handlerClick_Card(id) {
+      function handlerClick_Card(element) {
         // DOM Document object model
-        const user = document.getElementById(id);
+        const user = document.getElementById(element.id);
+        // TODO: utilizar querySelector en lugar de children
         let contador = user.children[0].children[0].children[1].children[2];
         contador.innerText = parseInt(contador.innerText) + 1;
 
@@ -26,7 +27,7 @@
     <main>
       <h1>Usuarios</h1>
       <ul class="users-list">
-        <li class="user-item" id="1" onclick="handlerClick_Card(1)">
+        <li class="user-item" id="1" onclick="handlerClick_Card(this)">
           <div class="card user-item__content">
             <a href="#">
               <div class="user-item__image avatar">
@@ -40,7 +41,7 @@
             </a>
           </div>
         </li>
-        <li class="user-item" id="2" onclick="handlerClick_Card(2)">
+        <li class="user-item" id="2" onclick="handlerClick_Card(this)">
           <div class="card user-item__content">
             <a href="#">
               <div class="user-item__image avatar">
@@ -54,7 +55,7 @@
             </a>
           </div>
         </li>
-        <li class="user-item" id="3" onclick="handlerClick_Card(3)">
+        <li class="user-item" id="3" onclick="handlerClick_Card(this)">
           <div class="card user-item__content">
             <a href="#">
               <div class="user-item__image avatar">
