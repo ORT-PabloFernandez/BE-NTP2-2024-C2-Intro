@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <title>NTP2</title>
+    <script>
+      function handlerClick_Card(id) {
+        // DOM Document object model
+        const user = document.getElementById(id);
+        let contador = user.children[0].children[0].children[1].children[2];
+        contador.innerText = parseInt(contador.innerText) + 1;
+
+        //console.log(contador.innerText);
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Usuarios</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Usuarios</h1>
+      <ul class="users-list">
+        <li class="user-item" id="1" onclick="handlerClick_Card(1)">
+          <div class="card user-item__content">
+            <a href="#">
+              <div class="user-item__image avatar">
+                <img src="/images/Adele Vance.jpg" />
+              </div>
+              <div class="user-item__info">
+                <h2>Adele Vance</h2>
+                <h2>@adelev</h2>
+                <h3>0</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="user-item" id="2" onclick="handlerClick_Card(2)">
+          <div class="card user-item__content">
+            <a href="#">
+              <div class="user-item__image avatar">
+                <img src="/images/Alex Wilber.jpg" />
+              </div>
+              <div class="user-item__info">
+                <h2>Alex Wilber</h2>
+                <h2>@alexw</h2>
+                <h3>0</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="user-item" id="3" onclick="handlerClick_Card(3)">
+          <div class="card user-item__content">
+            <a href="#">
+              <div class="user-item__image avatar">
+                <img src="/images/Diego Siciliani.jpg" />
+              </div>
+              <div class="user-item__info">
+                <h2>Diego Siciliani</h2>
+                <h2>@diegos</h2>
+                <h3>0</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <p>© 2024 | Todos los derechos reservados</p>
+    </footer>
+  </body>
+</html>
