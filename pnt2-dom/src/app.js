@@ -424,14 +424,7 @@ const users = [
 ];
 
 function load() {
-  let usuarios = [
-    { nombre: "Adele Vance", twitter: "@adelev" },
-    { nombre: "Alex Wilber", twitter: "@alexw" },
-    { nombre: "Diego Siciliani", twitter: "@diegos" },
-    { nombre: "Pablo Fernandez", twitter: "@pablof" },
-  ];
-
-  createUsers(usuarios);
+  createUsers(users);
 }
 
 function createUsers(usuarios) {
@@ -451,7 +444,7 @@ function createUsers(usuarios) {
     userItem.appendChild(card);
 
     const link = document.createElement("a");
-    link.href = "#";
+    link.href = `usuario.htm?userId=${user["Object Id"]}`;
     card.appendChild(link);
 
     const userItemImage = document.createElement("div");
@@ -459,7 +452,7 @@ function createUsers(usuarios) {
     link.appendChild(userItemImage);
 
     const imageUser = document.createElement("img");
-    imageUser.src = `images/${user.nombre}.jpg`;
+    imageUser.src = `images/${user["Display name"]}.jpg`;
     userItemImage.appendChild(imageUser);
 
     const userItemInfo = document.createElement("div");
@@ -467,11 +460,15 @@ function createUsers(usuarios) {
     link.appendChild(userItemInfo);
 
     const nombreUser = document.createElement("h2");
-    nombreUser.innerHTML = user.nombre;
+    nombreUser.innerHTML = user["Display name"];
     userItemInfo.appendChild(nombreUser);
 
-    const twitterUser = document.createElement("h2");
-    twitterUser.innerHTML = user.twitter;
-    userItemInfo.appendChild(twitterUser);
+    const titleUser = document.createElement("h2");
+    titleUser.innerHTML = user.Title;
+    userItemInfo.appendChild(titleUser);
+
+    const stateUser = document.createElement("h3");
+    stateUser.innerHTML = user.State;
+    userItemInfo.appendChild(stateUser);
   }
 }
