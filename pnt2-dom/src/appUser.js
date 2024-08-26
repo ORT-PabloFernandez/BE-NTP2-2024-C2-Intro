@@ -1,41 +1,13 @@
+import users from "../data/users";
+
 document.addEventListener("DOMContentLoaded", () => load());
 
 function load() {
-  const user = {
-    "Block credential": "FALSE",
-    City: "Bloomington",
-    "Country/Region": "United States",
-    Department: "R&D",
-    DirSyncEnabled: "",
-    "Display name": "Grady Archie",
-    Fax: "",
-    "First name": "Grady",
-    "Last dirsync time": "2022-03-14 14:45:23Z",
-    "Last name": "Archie",
-    "Last password change time stamp": "",
-    "License assignment details":
-      "Microsoft 365 E5 Developer (without Windows and Audio Conferencing)",
-    Licenses: "",
-    "Mobile Phone": "",
-    "Oath token meta data": "",
-    "Object Id": "302ddc87-c65a-437f-83de-aa8672f8e8a3",
-    Office: "19/2109",
-    "Password never expires": "",
-    "Phone number": "+1 309 555 0104",
-    "Postal code": "61704",
-    "Preferred data location": "",
-    "Preferred language": "en-US",
-    "Proxy addresses": "SMTP:GradyA@tecnosharedev.onmicrosoft.com",
-    "Release track": "",
-    "Soft deletion time stamp": "",
-    State: "IL",
-    "Street address": "2203 E. Empire St., Suite J",
-    "Strong password required": "",
-    Title: "Designer",
-    "Usage location": "US",
-    "User principal name": "GradyA@tecnosharedev.onmicrosoft.com",
-    "When created": "2020-05-23 19:59:03Z",
-  };
+  const queryString = window.location.search;
+  const params = new URLSearchParams(queryString);
+  const userId = params.get("userId");
+  console.log(userId);
+  const user = users.find((user) => user["Object Id"] === userId);
   createUser(user);
 }
 
@@ -81,4 +53,8 @@ function createUser(user) {
   const stateUser = document.createElement("h3");
   stateUser.innerHTML = user.State;
   userItemInfo.appendChild(stateUser);
+
+  const cityUser = document.createElement("h3");
+  cityUser.innerHTML = user.City;
+  userItemInfo.appendChild(cityUser);
 }
