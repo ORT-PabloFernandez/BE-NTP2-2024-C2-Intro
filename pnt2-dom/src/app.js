@@ -1,8 +1,12 @@
-import users from "../data/users.js";
+// import users from "../data/users.js";
+import { userCSV } from "../data/usersCSV.js";
 
 document.addEventListener("DOMContentLoaded", () => load());
 
 function load() {
+  //console.log(userCSV);
+  const users = Papa.parse(userCSV, { header: true }).data;
+  console.log(users);
   createUsers(users);
 }
 
