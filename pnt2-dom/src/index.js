@@ -1,5 +1,6 @@
 // import users from "../data/users.js";
 import { userCSV } from "../data/usersCSV.js";
+import Papa from "papaparse";
 
 document.addEventListener("DOMContentLoaded", () => load());
 
@@ -46,7 +47,7 @@ function createUsers(usuarios) {
     nombreUser.innerHTML = user["Display name"];
     userItemInfo.appendChild(nombreUser);
 
-    const titleUser = document.createElement("h2");
+    const titleUser = document.createElement("h3");
     titleUser.innerHTML = user.Title;
     userItemInfo.appendChild(titleUser);
 
