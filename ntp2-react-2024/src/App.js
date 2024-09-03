@@ -1,13 +1,12 @@
 import "./App.css";
-import User from "./User/User";
+import UserList from "./User/UserList";
+import users from "./mocUsers.js";
 
 function App() {
   return (
     <div className="App">
       <h3>Listado de usuarios</h3>
-      <User Nombre="Adele Vance" />
-      <User Nombre="Juan Perez" />
-      <User Nombre="Annita" />
+      <UserList users={users} />
     </div>
   );
 }
