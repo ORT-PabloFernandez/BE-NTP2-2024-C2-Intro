@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./User.css";
 import { useState } from "react";
 
@@ -12,7 +13,7 @@ function User(props) {
   return (
     <li className="user-item" onClick={Handler_ClickUser}>
       <div className="card user-item__content">
-        <a href="#">
+        <Link to={`/users/${props.Id}`}>
           <div className="user-item__image avatar">
             <img src={props.Picture} alt={props.UserName} />
           </div>
@@ -22,7 +23,7 @@ function User(props) {
             <h3>{props.City}</h3>
             <h3>{contador}</h3>
           </div>
-        </a>
+        </Link>
       </div>
     </li>
   );
